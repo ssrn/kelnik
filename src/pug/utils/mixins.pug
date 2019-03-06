@@ -1,0 +1,41 @@
+mixin icon(name, mod)
+	if(mod)
+		svg(class="icon__" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/sprite.svg#" + name)
+	else
+		svg(class="icon__" + name)
+			use(xlink:href="img/svg/sprite.svg#" + name)
+
+
+mixin flat-card(flat)
+	- var status = '';
+	case flat.status
+		when 'свободно'
+			- status = 'free'
+		when 'забронировано'
+			- status = 'booked'
+		when 'продано'
+			- status = 'sold'
+		default
+			- status = 'free'
+
+	article.flat
+		a(class=`flat-card flat-card--${status}`)
+			.flat-card__header
+				if flat.sale
+					span.flat-card__label.flat-card__sale= flat.sale
+				if flat.shockPrice
+					span.flat-card__label.flat-card__shock-price шок цена
+			.flat-card__img-wrap
+				img(class="flat-card__img" src=`${flat.image}` alt="Планировка")
+			.flat-card__body
+				.flat-card__title= flat.title
+				.flat-card__param
+					.flat-card__decoration= flat.decoration
+					.flat-card__meters #{flat.meters} м<sup>2</sup> площадь
+					.flat-card__floor #{flat.floor} этаж
+				.flat-card__price= flat.price
+			.flat-card__footer
+				div(class=`flat-card__status flat-card__status--${status}`)= flat.status
+		button(class="favorite-btn" aria-label="Добавить в избранное")
+			+icon('star')

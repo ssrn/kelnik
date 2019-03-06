@@ -1,0 +1,61 @@
+textarea,
+input {
+  padding: 15px 24px;
+
+  color: $blue;
+  font-size: 18px;
+
+  border: none;
+  border-radius:  $border-radius;
+
+  @include media(ms, max) {
+    width: 100%;
+  }
+}
+
+.form__checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  font-size: 18px;
+  user-select: none;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:hover,
+    &:checked {
+      &  ~ .form__checkmark:after {
+        display: block;
+      }
+    }
+  }
+}
+
+.form__checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  transform: translateY(-50%);
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid $blue;
+    border-width: 0 2px 2px 0;
+    transform: rotate(40deg);
+  }
+}

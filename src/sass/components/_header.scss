@@ -1,0 +1,107 @@
+.page-header {
+  background-color: $primary;
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+  }
+}
+
+.page-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @include media(lg) {
+    padding: 12px 40px;
+  }
+}
+
+.page-header__logo-link {
+  display: block;
+  padding: 16px 8px;
+  color: $primary;
+
+  &:hover {
+    opacity: .85;
+  }
+}
+
+.page-header__logo {
+  vertical-align: middle;
+
+  @include media(sm, max) {
+    width: 14px;
+  }
+
+  @include media(md, between) {
+    width: 20px;
+  }
+}
+
+.page-header__contacts {
+  color: #fefefe;
+
+  @include media(md, max) {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
+.page-header__phone {
+  display: block;
+  text-decoration: none;
+
+  @include media(md, max) {
+    padding: 8px;
+    color: $secondary;
+
+    &:hover {
+      color: $secondary-hover;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  @include media(lg) {
+    color: #fefefe;
+    font-size: 32px;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
+}
+
+.icon__phone {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  @include media(md, between) {
+    width: 42px;
+    height: 42px;
+  }
+
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.page-header__phone-desc {
+  display: none;
+
+  @include media(lg) {
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+  }
+}

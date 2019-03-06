@@ -1,0 +1,130 @@
+.page-header__nav {
+  @include media(md, max) {
+    position: fixed;
+    top: 67px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    min-width: 320px;
+    padding-top: 15px;
+    padding-right: 16px;
+    padding-left: 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(0,47,47,.97);
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav__item {
+  @include media(lg) {
+    display: inline-block;
+  }
+}
+
+.main-nav__link {
+  display: block;
+  padding: 0 24px;
+
+  color: #fefefe;
+  font-size: 24px;
+  text-decoration: none;
+
+  @include media(md, max) {
+    margin-bottom: 8px;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
+
+  @include media(lg) {
+    span {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    &:hover {
+      span {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+}
+
+.toggle-menu__hamburger {
+  display: block;
+  width: 42px;
+  height: 36px;
+  padding: 8px;
+  position: relative;
+
+  transform: rotate(0deg);
+  transition: all .3s ease-in-out 0s;
+  cursor: pointer;
+
+
+  @include media(lg) {
+    display: none;
+  }
+
+  &.is-active {
+    .toggle-menu__line {
+      &:nth-child(1) {
+        top: 18px;
+        left: 50%;
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 18px;
+        left: 50%;
+        width: 0;
+      }
+    }
+  }
+}
+
+.toggle-menu__line {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 26px;
+  background: #fff;
+  border-radius:  $border-radius;
+  opacity: 1;
+  left: 8px;
+  transform: rotate(0deg);
+  transition: all .25s ease-in-out 0s;
+
+  &:nth-child(1) {
+    top: 8px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    top: 18px;
+  }
+
+  &:nth-child(4) {
+    top: 28px;
+  }
+}
