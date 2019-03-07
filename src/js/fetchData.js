@@ -1,5 +1,5 @@
 const fetchData = (func, prop, ...args) => {
-  fetch('/data/flats.json')
+  fetch('data/flats.json')
     .then(response => response.json())
     .then(data => {
       func(data[prop], ...args)
