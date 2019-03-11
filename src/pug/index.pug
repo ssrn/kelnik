@@ -11,12 +11,16 @@ block content
             .search-result__sorter
                 span.sorter__label Сортировать по:
                 ul.sorter__list
-                    li.sorter__item(data-sort="price" data-direction="desc") Цене
-                        span.sorter__sort-arrow
-                            +icon('sort-arrow')
-                    li.sorter__item(data-sort="rooms" data-direction="desc") Комнатам
-                        span.sorter__sort-arrow
-                            +icon('sort-arrow')
+                    li.sorter__item
+                        button(data-sort="price" aria-label="Сортировать цену по возрастанию" class="sorter__sort")
+                            span.sorter__title Цене
+                            span.sorter__sort-arrow
+                                +icon('sort-arrow')
+                    li.sorter__item()
+                        button(data-sort="rooms" aria-label="Сортировать комнаты по возрастанию" class="sorter__sort")
+                            span.sorter__title Комнатам
+                            span.sorter__sort-arrow
+                                +icon('sort-arrow')
             .search-result__cards-wrap
                 - for (var i = 0; i < 12; i++)
                     +flat-card(flats[i])

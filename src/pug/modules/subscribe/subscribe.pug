@@ -4,8 +4,9 @@
     .subscribe__desc Подпишись и успей словить все акции
   form(method="post" action="" class="form subscribe-form j-subscribe")
     .form__group.subscribe__form-group
-      input(type="email" name="email" placeholder="E-mail" required class="subscribe__input" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")
-      label.check.subscribe____checkbox подписаться на новости
+      input(id="subscribe__email" class="subscribe__email" type="email" name="email" placeholder="E-mail" required pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")
+      label(for="subscribe__email" class="visually-hidden") Введите e-mail
+      label.check.subscribe__checkbox подписаться на новости
         input(id="agreement" type="checkbox" name="agreement" class="check__input visually-hidden")
         span.check__box
     .subscribe__btn-wrap

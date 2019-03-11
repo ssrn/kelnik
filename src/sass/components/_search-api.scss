@@ -41,8 +41,7 @@
 }
 
 .sorter__item {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   margin-left: 20px;
 
   @include media(ms, max) {
@@ -50,6 +49,27 @@
       margin-left: 0;
     }
   }
+}
+
+.sorter__sort {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+
+  background: #fff;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    .sorter__title {
+      border-bottom-color: $primary;
+    }
+  }
+}
+
+.sorter__title {
+  padding: 4px 0;
+  border-bottom: 1px dotted transparent;
 }
 
 .sorter__sort-arrow {

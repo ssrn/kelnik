@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('data/flats.json')
       .then(response => response.json())
       .then(data => {
-        sortData(data['flats'], e, 'price');
+        sortData(data['flats'], e,'price', 'цену');
       });
   }, true);
   roomsInput.addEventListener('click', e => {
     fetch('data/flats.json')
       .then(response => response.json())
       .then(data => {
-        sortData(data['flats'], e, 'rooms');
+        sortData(data['flats'], e,'rooms', 'комнаты');
       });
   }, true);
 });
