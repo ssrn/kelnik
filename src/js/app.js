@@ -1,3 +1,4 @@
+import lazyload from "./lazyload";
 import loadMoreResults from "./loadMoreResults";
 import sortData from "./sortData";
 import mobileMenu from "./mobileMenu";
@@ -5,6 +6,7 @@ import backtotop from "./backtotop";
 import validateEmail from "./validateEmail";
 
 document.addEventListener("DOMContentLoaded", () => {
+  lazyload();
   backtotop();
   mobileMenu();
   validateEmail();

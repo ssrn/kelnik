@@ -24,7 +24,7 @@ const renderFlats = (flats, start, finish = flats.length) => {
           ${flats[i].sale ? `<span class="flat-card__label flat-card__sale"> ${flats[i].sale} </span>` : ''}
           ${flats[i].shockPrice ? `<span class="flat-card__label flat-card__shock-price"> шок цена </span>` : ''}
         </div>
-        <div class="flat-card__img-wrap"><img src="${flats[i].image}" alt="Планировка" class="flat-card__img"></div>
+        <div class="flat-card__img-wrap"><img data-src="${flats[i].image}" alt="Планировка" class="flat-card__img js-lazy"></div>
         <div class="flat-card__body">
           <h2 class="flat-card__title">${flats[i].title}</h2>
           <div class="flat-card__param">

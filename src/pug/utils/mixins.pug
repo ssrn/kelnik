@@ -27,7 +27,7 @@ mixin flat-card(flat)
 				if flat.shockPrice
 					span.flat-card__label.flat-card__shock-price шок цена
 			.flat-card__img-wrap
-				img(class="flat-card__img" src=`${flat.image}` alt="Планировка")
+				img(class="flat-card__img js-lazy" data-src=`${flat.image}` alt="Планировка")
 			.flat-card__body
 				.flat-card__title= flat.title
 				.flat-card__param
