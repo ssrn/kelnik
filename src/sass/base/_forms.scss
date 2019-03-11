@@ -13,38 +13,38 @@ input {
   }
 }
 
-.form__checkbox {
+.check {
   display: block;
   position: relative;
   padding-left: 30px;
   font-size: 18px;
   user-select: none;
   cursor: pointer;
+}
 
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-
-    &:hover,
-    &:checked {
-      &  ~ .form__checkmark:after {
-        display: block;
-      }
+.check__input {
+  &:hover,
+  &:focus,
+  &:checked {
+    &  ~ .check__box:after {
+      display: block;
     }
+  }
+
+  &:focus + .check__box {
+    box-shadow: 0 0 0 0.2em $secondary-hover;
   }
 }
 
-.form__checkmark {
+.check__box {
   position: absolute;
-  top: 50%;
-  left: 0;
-  height: 20px;
-  width: 20px;
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.3em;
+  margin-left: -30px;
   background-color: #fff;
-  transform: translateY(-50%);
+  border-radius: $border-radius;
+  overflow: hidden;
 
   &:after {
     content: "";
