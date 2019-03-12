@@ -1,6 +1,6 @@
 const renderFlats = (flats, start, finish = flats.length) => {
   for (let i = start; i < finish; i++) {
-    let flat = document.createElement("article");
+    let flat = document.createElement("div");
     flat.classList.add(`flat`);
 
     let status = '';
