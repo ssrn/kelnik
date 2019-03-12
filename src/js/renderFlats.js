@@ -38,7 +38,7 @@ const renderFlats = (flats, start, finish = flats.length) => {
           <div class="flat-card__status flat-card__status--${status}">${flats[i].status}</div>
         </div>
       </a>
-      <button class="favorite-btn" aria-label="Добавить в избранное"><svg class="icon__fav"><use xlink:href="/img/svg/star.svg#star"></use></svg></button>
+      <button class="favorite-btn" aria-label="Добавить в избранное"><svg class="icon__star"><use xlink:href="img/svg/sprite.svg#star"></use></svg></button>
     `;
 
     flat.innerHTML = flatMarkup;

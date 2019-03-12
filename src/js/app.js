@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         sortData(data['flats'], e,'price', 'цену');
+        lazyload();
       });
   }, true);
   roomsInput.addEventListener('click', e => {
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         sortData(data['flats'], e,'rooms', 'комнаты');
+        lazyload();
       });
   }, true);
 });
